@@ -1,0 +1,9 @@
+import telebot
+
+bot = telebot.TeleBot('токен')
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.send_message(message.chat.id, "привет, красавчик")
+
+bot.polling(none_stop=True)
